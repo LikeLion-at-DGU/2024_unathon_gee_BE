@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import AlarmSound, Alarm
+from .models import AlarmSound, Alarm, Fortune
 
 @admin.register(AlarmSound)
 class AlarmSoundAdmin(admin.ModelAdmin):
@@ -15,3 +15,6 @@ class AlarmAdmin(admin.ModelAdmin):
     def get_days(self, obj):
         return ", ".join(obj.day)
     get_days.short_description = 'Days'
+    
+
+admin.site.register(Fortune)
