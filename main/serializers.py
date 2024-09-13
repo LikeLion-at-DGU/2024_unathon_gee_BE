@@ -6,4 +6,4 @@ class AlarmSerializer(serializers.ModelSerializer):
     day = fields.MultipleChoiceField(choices=DAY_CHOICE)
     class Meta:
         model = Alarm
-        fields = ['id', 'time', 'day', 'label', 'realert']
+        fields = ['id', 'time', 'day', 'label']

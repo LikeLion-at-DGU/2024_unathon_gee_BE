@@ -1,18 +1,21 @@
 from rest_framework import generics, mixins
 from .models import Alarm
 from .serializers import AlarmSerializer
+from rest_framework.filters import OrderingFilter
 
 class AlarmListCreateAPIView(mixins.ListModelMixin,
                              mixins.CreateModelMixin,
                              generics.GenericAPIView):
     queryset = Alarm.objects.all()
     serializer_class = AlarmSerializer
+    filter_backends = [OrderingFilter]
 
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
+    
 
 class AlarmRetrieveUpdateDestroyAPIView(mixins.RetrieveModelMixin,
                                         mixins.UpdateModelMixin,
