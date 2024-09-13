@@ -17,4 +17,4 @@ class Alarm(models.Model):
     time = models.TimeField()
     day = MultiSelectField(choices=DAY_CHOICE)
     label = models.CharField(max_length=200)
-    realert = models.BooleanField(default=True)
+    # realert = models.BooleanField(default=True)

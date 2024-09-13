@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     
     'rest_framework',
     'multiselectfield',
+    'django_filters',
 
     'main',
 ]
