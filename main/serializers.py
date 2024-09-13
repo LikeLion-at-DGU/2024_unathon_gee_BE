@@ -1,6 +1,6 @@
 from rest_framework import fields, serializers
 from .models import DAY_CHOICE
-from .models import Alarm, AlarmSound
+from .models import Alarm, AlarmSound, Fortune
 
 class AlarmSerializer(serializers.ModelSerializer):
     day = fields.MultipleChoiceField(choices=DAY_CHOICE)
@@ -8,4 +8,10 @@ class AlarmSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Alarm
-        fields = ['id', 'time', 'day', 'label','sound']
+        fields = ['id', 'time', 'day', 'label', 'sound']
+    
+class FortuneSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = Fortune
+        fields = ['id', 'content']

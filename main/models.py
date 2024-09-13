@@ -28,3 +28,8 @@ class Alarm(models.Model):
     label = models.CharField(max_length=200)
     sound = models.ForeignKey(AlarmSound, on_delete=models.CASCADE, default=1)
     # realert = models.BooleanField(default=True)
+    
+# 운세 모델
+class Fortune(models.Model):
+    id = models.AutoField(primary_key=True)
+    content = models.CharField(max_length=200)
