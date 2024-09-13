@@ -14,4 +14,4 @@ class FortuneSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Fortune
-        fields = ['id', 'content']
+        fields = ['content']
